@@ -1,9 +1,7 @@
 import React,{ Component, PropTypes } from 'react';
 import Avatar from 'material-ui/Avatar';
 import {List, ListItem} from 'material-ui/List';
-import Subheader from 'material-ui/Subheader';
-import Divider from 'material-ui/Divider';
-import CommunicationChatBubble from 'material-ui/svg-icons/communication/chat-bubble';
+import ListImagesDialog from './ListImagesDialog';
 
 export default class ListImages extends Component {
 
@@ -11,24 +9,37 @@ export default class ListImages extends Component {
     super(props);
     console.log(this.props.images);
 
-    this.onOpen = (e) => {
-      console.log(e+" "+i+" "+v);
+    this.state = {
+      open:false,
+      url: ''
     }
+  }
+
+  onOpenDialog(url) {
+    this.setState({ open: true, url: url });
+    console.log(url);
+  }
+
+  onCloseDialog() {
+    this.setState({ open: false, url: '' });
   }
 
   render() {
     return (
   <div>
     <List>
-      <Subheader>Recent chats</Subheader>
       {this.props.images.map((image) => (
         <ListItem
-          key={image._id}
+          key={image.id}
           primaryText={image.msg}
           leftAvatar={<Avatar src={image.url} />}
-          onTouchTap={this.onOpen}
+          onTouchTap={this.onOpenDialog.bind(this,image.url)}
         />))}
     </List>
+    <ListImagesDialog 
+      open = {this.state.open}
+      url={this.state.url}
+      onCloseDialog = {this.onCloseDialog.bind(this)} />
   </div>
     );
   }
