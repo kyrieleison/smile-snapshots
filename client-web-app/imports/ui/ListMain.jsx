@@ -13,7 +13,7 @@ const imgs = [
 export default class Home extends Component {
   
   /* TODO: iPhoneから送信されてきた画像をnode.jsでpublic/imgに保存した後、
-  　　画像一覧のURLをimgsを参考に生成してListImagesに渡してください。
+  　　画像一覧のURLをimgsを参考に生成してListImagesに渡してください。　*/
 
   constructor(props) {
     super(props);
