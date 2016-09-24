@@ -4,6 +4,14 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import AppBarSample from './AppBarSample.jsx';
 import ListImages from './ListImages';
 
+const imgs = [
+      { _id:1, url:'img/images.jpg',msg:'message' },
+      { _id:2, url:'img/images.jpg',msg:'message' },
+      { _id:3, url:'img/images.jpg',msg:'message' },
+      { _id:4, url:'img/images.jpg',msg:'message' },
+      { _id:5, url:'img/images.jpg',msg:'message' },
+    ];
+
 // App component - represents the whole app
 export default class App extends Component { 
  
@@ -12,7 +20,7 @@ export default class App extends Component {
       <MuiThemeProvider>
         <div className="container">
           <AppBarSample />
-          <ListImages />
+          <ListImages images={imgs} />
           {/* <ToolBarMain /> */}
           {/* <TableMain />
           <header>

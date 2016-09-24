@@ -1,48 +1,43 @@
-import React from 'react';
+import React,{ Component, PropTypes } from 'react';
 import Avatar from 'material-ui/Avatar';
 import {List, ListItem} from 'material-ui/List';
 import Subheader from 'material-ui/Subheader';
 import Divider from 'material-ui/Divider';
 import CommunicationChatBubble from 'material-ui/svg-icons/communication/chat-bubble';
 
-const ListImages = () => (
+export default class ListImages extends Component {
+
+  constructor(props) {
+    super(props);
+    console.log(this.props.images);
+
+    this.onOpen = (e) => {
+      console.log(e+" "+i+" "+v);
+    }
+  }
+
+  render() {
+    return (
   <div>
     <List>
       <Subheader>Recent chats</Subheader>
-      <ListItem
-        primaryText="Brendan Lim"
-        leftAvatar={<Avatar src="img/images.jpg" />}
-      />
-      <ListItem
-        primaryText="Eric Hoffman"
-        leftAvatar={<Avatar src="images/kolage-128.jpg" />}
-      />
-      <ListItem
-        primaryText="Grace Ng"
-        leftAvatar={<Avatar src="images/uxceo-128.jpg" />}
-      />
-      <ListItem
-        primaryText="Kerem Suer"
-        leftAvatar={<Avatar src="images/kerem-128.jpg" />}
-      />
-      <ListItem
-        primaryText="Raquel Parrado"
-        leftAvatar={<Avatar src="images/raquelromanp-128.jpg" />}
-      />
-    </List>
-    <Divider />
-    <List>
-      <Subheader>Previous chats</Subheader>
-      <ListItem
-        primaryText="Chelsea Otakan"
-        leftAvatar={<Avatar src="images/chexee-128.jpg" />}
-      />
-      <ListItem
-        primaryText="James Anderson"
-        leftAvatar={<Avatar src="images/jsa-128.jpg" />}
-      />
+      {this.props.images.map((image) => (
+        <ListItem
+          key={image._id}
+          primaryText={image.msg}
+          leftAvatar={<Avatar src={image.url} />}
+          onTouchTap={this.onOpen}
+        />))}
     </List>
   </div>
-);
+    );
+  }
+}
 
-export default ListImages;
+ListImages.propTypes = {
+  // This component gets the task to display through a React prop.
+  // We can use propTypes to indicate it is required
+  images: PropTypes.array.isRequired,
+};
+
+

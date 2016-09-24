@@ -5,7 +5,7 @@ import Drawer from 'material-ui/Drawer';
 import Menu from 'material-ui/Menu';
 import MenuItem from 'material-ui/MenuItem';
 import RaisedButton from 'material-ui/RaisedButton';
-import ListImages from './ListImages';
+// import ListImages from './ListImages';
 
 /* const AppBarSample = () => (
   <AppBar
@@ -15,6 +15,8 @@ import ListImages from './ListImages';
 );
 
 export default AppBarSample; */
+
+
 
 // Task component - represents a single todo item
 export default class Home extends Component {
@@ -33,12 +35,13 @@ export default class Home extends Component {
       if (value === "bbb") browserHistory.push('users');
     } */
   }
-  
+
+
   render() {
     return (
       <div>
         <h1>Sample App</h1>
-        <ListImages />
+       {/* <ListImages images={null} /> */}
       </div>
     );
   }
