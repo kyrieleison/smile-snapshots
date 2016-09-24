@@ -23,7 +23,7 @@ class Camera extends Component {
       <div className="camera">
         it's camera.
         <br />
-        <video id="local_video" ref="local" style={{ width: 320 + 'px', height: 240 + 'px' }} />
+        <video id="local_video" ref="local" autoPlay style={{ width: 320 + 'px', height: 240 + 'px' }} />
       </div>
     );
   }
