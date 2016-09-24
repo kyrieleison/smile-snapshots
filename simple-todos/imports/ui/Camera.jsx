@@ -2,25 +2,20 @@ import React, { Component, PropTypes } from 'react';
 import ReactDOM from 'react-dom';
 import { createContainer } from 'meteor/react-meteor-data';
 
-class App extends Component {
+class Camera extends Component {
   render() {
     return (
-      <div className="app">
-        <header>
-          <h1>Smile Snapshop</h1>
-        </header>
-        <div className="container">
-          {this.props.children}
-        </div>
+      <div className="camera">
+        it's camera.
       </div>
     );
   }
 }
 
-App.propTypes = {
+Camera.propTypes = {
 };
 
 export default createContainer(() => {
   return {
   };
-}, App);
+}, Camera);
