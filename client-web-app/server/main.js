@@ -22,14 +22,14 @@ Meteor.startup(() => {
         console.log("Request Body:" + data);
         let image = querystring.parse(data).image;
         res.end(data);
-        fs.writeFile(`../web.browser/app/img/uploaded/${filename}.jpg`, image, 'base64', (err) => {
+        fs.writeFile(`../web.browser/app/img/uploaded_${filename}.jpg`, image, 'base64', (err) => {
           if (err) { console.log("Error:" + err) };
           console.log('It\'s Saved');
 
           Photos.insert({
             userID: 1,
             user: '山田太郎',
-            url: `img/uploaded/${filename}.jpg`,
+            url: `img/uploaded_${filename}.jpg`,
             shopID: 1,
             shopName:'A店',
             createdAt: new Date()
