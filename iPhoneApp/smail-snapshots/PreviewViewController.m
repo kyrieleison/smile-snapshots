@@ -23,10 +23,11 @@
     _imageView = [[UIImageView alloc] initWithFrame:self.view.frame];
     [_imageView setContentMode:UIViewContentModeScaleAspectFit];
     
-    _cancel = [[UIButton alloc] initWithFrame:CGRectMake(self.view.frame.size.width/5, self.view.frame.size.height - 100, self.view.frame.size.width/5, 20)];
-    _save = [[UIButton alloc] initWithFrame:CGRectMake((self.view.frame.size.width/5) * 3, self.view.frame.size.height - 100, self.view.frame.size.width/5, 20)];
-    _cancel.backgroundColor = [UIColor blackColor];
-    _save.backgroundColor = [UIColor blackColor];
+    _cancel = [[UIButton alloc] initWithFrame:CGRectMake(self.view.frame.size.width/5 - 15, self.view.frame.size.height - 100, self.view.frame.size.width/5 + 30, 20)];
+    _save = [[UIButton alloc] initWithFrame:CGRectMake(((self.view.frame.size.width/5) * 3) , self.view.frame.size.height - 100, self.view.frame.size.width/5, 20)];
+    
+    [_cancel setTitle:@"キャンセル" forState:UIControlStateNormal];
+    [_save setTitle:@"保存" forState:UIControlStateNormal];
     
     [self.view addSubview:_imageView];
     [self.view addSubview:_cancel];

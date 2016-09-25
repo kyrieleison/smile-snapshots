@@ -25,11 +25,12 @@
     
     // 最初に表示されるViewControllerを生成
     _tabBarController = [[UITabBarController alloc] init];
-    // １つめのタブのタイトルを"hoge"に設定する
-    [_tabBarController.tabBar.items objectAtIndex:0].title = @"写真";
     [_tabBarController.tabBar.items objectAtIndex:1].title = @"Web";
     ViewController *fvc = [[ViewController alloc] init];
+    // １つめのタブのタイトルを"hoge"に設定する
+    fvc.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"" image:[UIImage imageNamed:@"Screenshot-50"] selectedImage:[UIImage imageNamed:@"Screenshot Filled-50"]];
     WebView *webView = [[WebView alloc] init];
+    webView.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"" image:[UIImage imageNamed:@"List-50"] selectedImage:[UIImage imageNamed:@"List Filled-50"]];
     fvc.view.backgroundColor = [UIColor whiteColor];
     NSArray *views = @[fvc,webView];
     [_tabBarController setViewControllers:views animated:NO];

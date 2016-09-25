@@ -34,8 +34,10 @@
     _frameView.image = myImage;
     // Do any additional setup after loading the view, typically from a nib.
     UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake((self.view.frame.size.width/2 - 50), (self.view.frame.size.height - 40), 100, 20)];
-    button.backgroundColor = [UIColor whiteColor];
-    button.titleLabel.text = @"撮影";
+    //button.backgroundColor = [UIColor whiteColor];
+    
+    [button setTitle:@"撮影" forState:UIControlStateNormal];
+    
     [button addTarget:self action:@selector(takePhoto:) forControlEvents:UIControlEventTouchDown];
     [self.view addSubview:_photoView];
     [self.view addSubview:_frameView];
