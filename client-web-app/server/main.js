@@ -1,5 +1,7 @@
 import { Meteor } from 'meteor/meteor';
 import querystring from 'querystring';
+import base64 from 'urlsafe-base64';
+import fs from 'fs';
 
 Meteor.startup(() => {
   WebApp.connectHandlers.use("/hello", (req, res, next) => {
@@ -18,10 +20,13 @@ Meteor.startup(() => {
         querystring.parse(data);
           res.end(data);
           console.log("Request Body:"+data);
+          let img =  base64.decode( data );
+          fs.writeFile('../web.browser/app/img/uploaded.jpg',img,(err) =>{
+            console.log("error:"+(err));  
+          }) 
       });
     }
     res.writeHead(200);
     res.end("Hello world from: " + Meteor.release);
   })
 });
-
