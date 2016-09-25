@@ -4,7 +4,7 @@ import querystring from 'querystring';
 import dateformat from 'dateformat';
 import fs from 'fs';
 
-import { Photos } from '../imports/api/photos.js'
+import { Photos } from '../imports/api/photos.js';
 
 Meteor.startup(() => {
   WebApp.connectHandlers.use("/image", (req, res, next) => {

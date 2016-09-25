@@ -30,10 +30,10 @@ export default class ListImages extends Component {
     <List>
       {this.props.images.map((image) => (
         <ListItem
-          key={image.id}
-          primaryText={image.msg}
+          key={image._id}
+          primaryText={image.shopName}
           leftAvatar={<Avatar src={image.url} />}
-          onTouchTap={this.onOpenDialog.bind(this,image.url)}
+          onTouchTap={this.onOpenDialog.bind(this.image.url)}
         />))}
     </List>
     <ListImagesDialog 

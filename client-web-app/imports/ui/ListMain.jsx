@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import { createContainer } from 'meteor/react-meteor-data';
 import ListImages from './ListImages';
 
-import { Photos } from '../api/photos.js'
+import { Photos } from '../api/photos.js';
 
 // const imgs = [
 //       { id:1, url:'img/images.jpg',msg:'A店' },
@@ -18,6 +18,7 @@ export default class ListMain extends Component {
   }
 
   render() {
+    console.log(this.props);
     return (
       <div>
         <ListImages images={this.props.imgsMongo} />
@@ -30,7 +31,8 @@ export default createContainer(() => {
  // Meteor.subscribe("server_states");
  // console.log("recive upload");
  // this.imgsMongo = Photos.find({});
- // console.log("MongoDB:"+Photos.find({}));
+  console.log(Photos);
+  console.log("MongoDB:"+Photos.find({}).fetch());
   return {
     imgsMongo : Photos.find({}).fetch(),
   };
