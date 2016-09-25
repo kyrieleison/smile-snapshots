@@ -10,21 +10,12 @@ export default class App extends Component {
   render() {
     return (
       <MuiThemeProvider>
-        <div className="container">
-          <AppBarSample />
-          <ListImages />
-          {/* <ToolBarMain /> */}
-          {/* <TableMain />
-          <header>
-            <h1>Todo List</h1>
-          </header>
-          <ul>
-            this.renderTasks()
-          </ul>
-        </div>
-        <div className="detail"> */}
-           {this.props.children}  
-        </div>
+          <div>
+            <AppBarSample />
+            <div className="container">
+              {this.props.children}
+            </div>
+          </div>
       </MuiThemeProvider>
     );
   }

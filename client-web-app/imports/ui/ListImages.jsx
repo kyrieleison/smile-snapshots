@@ -1,48 +1,54 @@
-import React from 'react';
+import React,{ Component, PropTypes } from 'react';
 import Avatar from 'material-ui/Avatar';
 import {List, ListItem} from 'material-ui/List';
-import Subheader from 'material-ui/Subheader';
-import Divider from 'material-ui/Divider';
-import CommunicationChatBubble from 'material-ui/svg-icons/communication/chat-bubble';
+import ListImagesDialog from './ListImagesDialog';
 
-const ListImages = () => (
+export default class ListImages extends Component {
+
+  constructor(props) {
+    super(props);
+    console.log(this.props.images);
+
+    this.state = {
+      open:false,
+      url: ''
+    }
+  }
+
+  onOpenDialog(url) {
+    this.setState({ open: true, url: url });
+    console.log(url);
+  }
+
+  onCloseDialog() {
+    this.setState({ open: false, url: '' });
+  }
+
+  render() {
+    return (
   <div>
     <List>
-      <Subheader>Recent chats</Subheader>
-      <ListItem
-        primaryText="Brendan Lim"
-        leftAvatar={<Avatar src="img/images.jpg" />}
-      />
-      <ListItem
-        primaryText="Eric Hoffman"
-        leftAvatar={<Avatar src="images/kolage-128.jpg" />}
-      />
-      <ListItem
-        primaryText="Grace Ng"
-        leftAvatar={<Avatar src="images/uxceo-128.jpg" />}
-      />
-      <ListItem
-        primaryText="Kerem Suer"
-        leftAvatar={<Avatar src="images/kerem-128.jpg" />}
-      />
-      <ListItem
-        primaryText="Raquel Parrado"
-        leftAvatar={<Avatar src="images/raquelromanp-128.jpg" />}
-      />
+      {this.props.images.map((image) => (
+        <ListItem
+          key={image.id}
+          primaryText={image.msg}
+          leftAvatar={<Avatar src={image.url} />}
+          onTouchTap={this.onOpenDialog.bind(this,image.url)}
+        />))}
     </List>
-    <Divider />
-    <List>
-      <Subheader>Previous chats</Subheader>
-      <ListItem
-        primaryText="Chelsea Otakan"
-        leftAvatar={<Avatar src="images/chexee-128.jpg" />}
-      />
-      <ListItem
-        primaryText="James Anderson"
-        leftAvatar={<Avatar src="images/jsa-128.jpg" />}
-      />
-    </List>
+    <ListImagesDialog 
+      open = {this.state.open}
+      url={this.state.url}
+      onCloseDialog = {this.onCloseDialog.bind(this)} />
   </div>
-);
+    );
+  }
+}
 
-export default ListImages;
+ListImages.propTypes = {
+  // This component gets the task to display through a React prop.
+  // We can use propTypes to indicate it is required
+  images: PropTypes.array.isRequired,
+};
+
+

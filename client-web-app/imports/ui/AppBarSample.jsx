@@ -4,7 +4,6 @@ import AppBar from 'material-ui/AppBar';
 import Drawer from 'material-ui/Drawer';
 import Menu from 'material-ui/Menu';
 import MenuItem from 'material-ui/MenuItem';
-import RaisedButton from 'material-ui/RaisedButton';
 
 /* const AppBarSample = () => (
   <AppBar
@@ -28,8 +27,7 @@ export default class AppBarSample extends Component {
     }
     this.handleValue = (event,value) =>{
       console.log(value);
-      if (value === "aaa") browserHistory.push('analysis'); 
-      if (value === "bbb") browserHistory.push('users');
+      browserHistory.push(value); 
     }
   }
   
@@ -37,7 +35,7 @@ export default class AppBarSample extends Component {
     return (
       <div>
         <AppBar
-          title="Sample"
+          title="Smile SnapShots"
           iconClassNameRight="muidocs-icon-navigation-expand-more"
           onLeftIconButtonTouchTap={this.handleToggle}
         />
@@ -51,8 +49,9 @@ export default class AppBarSample extends Component {
           }}
         >
         <Menu onChange={this.handleValue}>
-          <MenuItem onTouchTap={this.handleClose} value="aaa" >プロジェクト登録</MenuItem>
-          <MenuItem onTouchTap={this.handleClose} value="bbb"　> 分析</MenuItem>
+          <MenuItem onTouchTap={this.handleClose} value="list" >スマイル</MenuItem>
+          <MenuItem onTouchTap={this.handleClose} value="map"　> 撮った場所</MenuItem>
+          <MenuItem onTouchTap={this.handleClose} value="/"　>タイトル</MenuItem>
         </Menu>
         </Drawer>
       </div>
