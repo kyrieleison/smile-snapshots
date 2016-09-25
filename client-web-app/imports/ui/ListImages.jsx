@@ -33,7 +33,7 @@ export default class ListImages extends Component {
           key={image._id}
           primaryText={image.shopName}
           leftAvatar={<Avatar src={image.url} />}
-          onTouchTap={this.onOpenDialog.bind(image.url)}
+          onTouchTap={this.onOpenDialog.bind(this, image.url)}
         />))}
     </List>
     <ListImagesDialog 
