@@ -18,6 +18,7 @@
 		FF431ADB1D968280005C65E7 /* frame3.png in Resources */ = {isa = PBXBuildFile; fileRef = FF431ADA1D968280005C65E7 /* frame3.png */; };
 		FF431ADE1D968A53005C65E7 /* WebView.m in Sources */ = {isa = PBXBuildFile; fileRef = FF431ADD1D968A53005C65E7 /* WebView.m */; };
 		FF431AE11D96997D005C65E7 /* APIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = FF431AE01D96997D005C65E7 /* APIClient.m */; };
+		FF431AEC1D977B52005C65E7 /* ReadQrcodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF431AEB1D977B52005C65E7 /* ReadQrcodeViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,8 @@
 		FF431ADD1D968A53005C65E7 /* WebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebView.m; sourceTree = "<group>"; };
 		FF431ADF1D96997D005C65E7 /* APIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIClient.h; sourceTree = "<group>"; };
 		FF431AE01D96997D005C65E7 /* APIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIClient.m; sourceTree = "<group>"; };
+		FF431AEA1D977B52005C65E7 /* ReadQrcodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReadQrcodeViewController.h; sourceTree = "<group>"; };
+		FF431AEB1D977B52005C65E7 /* ReadQrcodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadQrcodeViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +114,8 @@
 				FF431ADD1D968A53005C65E7 /* WebView.m */,
 				FF431ADF1D96997D005C65E7 /* APIClient.h */,
 				FF431AE01D96997D005C65E7 /* APIClient.m */,
+				FF431AEA1D977B52005C65E7 /* ReadQrcodeViewController.h */,
+				FF431AEB1D977B52005C65E7 /* ReadQrcodeViewController.m */,
 			);
 			path = "smail-snapshots";
 			sourceTree = "<group>";
@@ -251,6 +256,7 @@
 				FF431ABF1D966A57005C65E7 /* main.m in Sources */,
 				FF431ADE1D968A53005C65E7 /* WebView.m in Sources */,
 				FF431AD61D966FC2005C65E7 /* PreviewViewController.m in Sources */,
+				FF431AEC1D977B52005C65E7 /* ReadQrcodeViewController.m in Sources */,
 				FF431AD91D9681C9005C65E7 /* APIManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

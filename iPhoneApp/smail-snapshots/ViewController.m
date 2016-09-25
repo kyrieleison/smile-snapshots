@@ -17,10 +17,19 @@
 @property (strong, nonatomic) AVCaptureSession *session;
 @property (strong, nonatomic) UIView *photoView;
 @property (strong, nonatomic) UIImageView *frameView;
+@property (strong, nonatomic) NSString *frameUrlString;
+@property (strong, nonatomic) UILabel *word;
 
 @end
 
 @implementation ViewController
+
+- (instancetype)initWithFrameUrlString:(NSString *)frameUrlString {
+    if (self = [super init]) {
+        _frameUrlString = frameUrlString;
+    }
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -29,9 +38,31 @@
     NSLog(@"%f,%f",self.view.frame.size.height,(self.view.frame.size.height));
     
     _photoView = [[UIView alloc] initWithFrame:self.view.frame];
-    UIImage * myImage = [UIImage imageNamed: @"frame3.png"];
+    _photoView.backgroundColor = [UIColor clearColor];
     _frameView = [[UIImageView alloc] initWithFrame:self.view.frame];
-    _frameView.image = myImage;
+    _word = [[UILabel alloc] init];
+    _word.numberOfLines = 2;
+    
+    if ([_frameUrlString isEqualToString:@"sample"]) {
+        _frameView.image = [UIImage imageNamed: @"frame2"];
+    } else {
+        _word.frame = CGRectMake(150 ,self.view.frame.size.height - 130 , 200, 80 );
+        //NSDateFormatterクラスを出力する。
+        NSDateFormatter *format = [[NSDateFormatter alloc] init];
+        
+        //Localeを指定。ここでは日本を設定。
+        [format setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"ja_JP"]];
+        
+        //出力形式を文字列で指定する。
+        [format setDateFormat:@"yyyy/MM/dd"];
+        
+        // 現在時刻を取得しつつ、NSDateFormatterクラスをかませて、文字列を出力する。
+        NSString *stTime = [format stringFromDate:[NSDate date]];
+        _word.text = [NSString stringWithFormat:@"ゼロワン商店街\n%@",stTime];
+        _word.backgroundColor = [UIColor clearColor];
+        _frameView.image = [UIImage imageNamed: @"frame1"];
+    }
+    
     // Do any additional setup after loading the view, typically from a nib.
     UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake((self.view.frame.size.width/2 - 50), (self.view.frame.size.height - 40), 100, 20)];
     //button.backgroundColor = [UIColor whiteColor];
@@ -41,6 +72,7 @@
     [button addTarget:self action:@selector(takePhoto:) forControlEvents:UIControlEventTouchDown];
     [self.view addSubview:_photoView];
     [self.view addSubview:_frameView];
+    [self.view addSubview:_word];
     [self.view addSubview:button];
     // 撮影開始
     [self setupAVCapture];
@@ -93,7 +125,7 @@
         return;
     }
     
-    PreviewViewController *previewViewController = [[PreviewViewController alloc] init];
+    PreviewViewController *previewViewController = [[PreviewViewController alloc] initWithShopId:self.frameUrlString];
     previewViewController.delegate = self;
     [self presentViewController:previewViewController animated:YES completion:nil];
     __weak typeof(previewViewController) weakPicturePreviewView = previewViewController;
@@ -111,9 +143,10 @@
          // JPEGデータからUIImageを作成
          UIImage *image = [[UIImage alloc] initWithData:imageData];
          
-         UIImage *setImage = [self compositeImages:@[image,[UIImage imageNamed: @"frame3.png"]] size:self.view.frame.size];
+         UIImage *setImage = [self compositeImages:@[image,_frameView.image] size:self.view.frame.size];
+         UIImage *overStringImage = [self gouseiImage:setImage composeImage:[self imageWithView:_word] sourceSize:setImage.size overFrame:_word.frame];
          
-         [weakPicturePreviewView setPreviewImage:setImage];
+         [weakPicturePreviewView setPreviewImage:overStringImage];
          
          // アルバムに画像を保存
          //UIImageWriteToSavedPhotosAlbum(image, self, nil, nil);
@@ -148,8 +181,51 @@
     return image;
 }
 
+- (UIImage *) imageWithView:(UIView *)view
+{
+    UIGraphicsBeginImageContextWithOptions(view.bounds.size, NO, 0.0);
+    [view.layer renderInContext:UIGraphicsGetCurrentContext()];
+    
+    UIImage *img = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return img;
+}
+
+-(UIImage*)gouseiImage:(UIImage*)sourceImage
+          composeImage:(UIImage*)composeImage
+           sourceSize:(CGSize)sourceSize
+             overFrame:(CGRect)overFrame
+{
+    
+    // グラフィックスコンテキストを作る
+    CGSize size = { sourceSize.width, sourceSize.height };
+    UIGraphicsBeginImageContext(size);
+    
+    //元画像を描画
+    CGRect rect;
+    rect.origin = CGPointZero;
+    rect.size = size;
+    [sourceImage drawInRect:rect];
+    
+    //重ね合わせる画像を描画
+    rect.origin = CGPointMake(overFrame.origin.x, overFrame.origin.y + 40);
+    rect.size = CGSizeMake(overFrame.size.width, overFrame.size.height);
+    [composeImage drawInRect:rect];
+    
+    // 描画した画像を取得する
+    UIImage* shrinkedImage;
+    shrinkedImage = UIGraphicsGetImageFromCurrentImageContext();
+    
+    UIGraphicsEndImageContext();
+    
+    return shrinkedImage;
+    
+}
+
 - (void)dissmissPicturePreviewView {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    // 閉じる処理
+    //[self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

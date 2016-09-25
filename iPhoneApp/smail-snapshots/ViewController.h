@@ -10,6 +10,7 @@
 
 @interface ViewController : UIViewController
 
+- (instancetype)initWithFrameUrlString:(NSString *)frameUrlString;
 
 @end
 

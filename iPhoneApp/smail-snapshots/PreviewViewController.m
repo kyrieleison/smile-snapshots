@@ -14,14 +14,23 @@
 @property (strong, nonatomic) UIButton *save;
 @property (strong, nonatomic) UIImageView *imageView;
 @property (strong, nonatomic) UIImage *image;
+@property (strong, nonatomic) NSString *shopId;
+
 @end
 
 @implementation PreviewViewController
 
+- (instancetype)initWithShopId:(NSString *)shopId {
+    if (self = [super init]) {
+        self.shopId = shopId;
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     self.view.backgroundColor = [UIColor whiteColor];
     _imageView = [[UIImageView alloc] initWithFrame:self.view.frame];
-    [_imageView setContentMode:UIViewContentModeScaleAspectFit];
+    [_imageView setContentMode:UIViewContentModeCenter];
     
     _cancel = [[UIButton alloc] initWithFrame:CGRectMake(self.view.frame.size.width/5 - 15, self.view.frame.size.height - 100, self.view.frame.size.width/5 + 30, 20)];
     _save = [[UIButton alloc] initWithFrame:CGRectMake(((self.view.frame.size.width/5) * 3) , self.view.frame.size.height - 100, self.view.frame.size.width/5, 20)];
@@ -50,7 +59,7 @@
 }
 
 - (void)tapSave:(UIButton *)sender {
-    [APIClient requestRegist:_image success:^{
+    [APIClient requestRegist:_image shopId:_shopId success:^{
         [self dismissViewControllerAnimated:YES completion:nil];
         [self.delegate dissmissPicturePreviewView];
     } failure:^(NSError *error) {
