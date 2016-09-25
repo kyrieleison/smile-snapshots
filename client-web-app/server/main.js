@@ -9,7 +9,7 @@ Meteor.startup(() => {
     if (req.method === 'POST') { 
       console.log("Receive POST");
       //readableイベントが発火したらデータにリクエストボディのデータを追加
-      req.on('readable', (chunk)　=> {
+      req.on('readable', (chunk) => {
             data += req.read();
         });
       //リクエストボディをすべて読み込んだらendイベントが発火する。
