@@ -1,6 +1,5 @@
 import { Meteor } from 'meteor/meteor';
 import querystring from 'querystring';
-import base64 from 'urlsafe-base64';
 import fs from 'fs';
 
 Meteor.startup(() => {
@@ -16,11 +15,10 @@ Meteor.startup(() => {
       });
       //リクエストボディをすべて読み込んだらendイベントが発火する。
       req.on('end', () => {
-        querystring.parse(data);
-        res.end(data);
         console.log("Request Body:" + data);
-        let img =  base64.decode( data );
-        fs.writeFile('../public/app/img/uploaded.jpg', img, (err) => {
+        let image = querystring.parse(data).image;
+        res.end(data);
+        fs.writeFile('../web.browser/app/img/uploaded.jpg', image, 'base64', (err) => {
           console.log("error:" + (err));
         })
       });
