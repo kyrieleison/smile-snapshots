@@ -1,0 +1,404 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		746AD622EFF640F7BBD7F809 /* libPods-smail-snapshots.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 324D91CD7ED7DEEDA9F81B7A /* libPods-smail-snapshots.a */; };
+		FF431ABF1D966A57005C65E7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FF431ABE1D966A57005C65E7 /* main.m */; };
+		FF431AC21D966A57005C65E7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FF431AC11D966A57005C65E7 /* AppDelegate.m */; };
+		FF431AC51D966A57005C65E7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF431AC41D966A57005C65E7 /* ViewController.m */; };
+		FF431ACA1D966A58005C65E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF431AC91D966A58005C65E7 /* Assets.xcassets */; };
+		FF431ACD1D966A58005C65E7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF431ACB1D966A58005C65E7 /* LaunchScreen.storyboard */; };
+		FF431AD61D966FC2005C65E7 /* PreviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF431AD51D966FC2005C65E7 /* PreviewViewController.m */; };
+		FF431AD91D9681C9005C65E7 /* APIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FF431AD81D9681C9005C65E7 /* APIManager.m */; };
+		FF431ADB1D968280005C65E7 /* frame3.png in Resources */ = {isa = PBXBuildFile; fileRef = FF431ADA1D968280005C65E7 /* frame3.png */; };
+		FF431ADE1D968A53005C65E7 /* WebView.m in Sources */ = {isa = PBXBuildFile; fileRef = FF431ADD1D968A53005C65E7 /* WebView.m */; };
+		FF431AE11D96997D005C65E7 /* APIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = FF431AE01D96997D005C65E7 /* APIClient.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		31AD1CF05FC73464A45374C9 /* Pods-smail-snapshots.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-smail-snapshots.release.xcconfig"; path = "Pods/Target Support Files/Pods-smail-snapshots/Pods-smail-snapshots.release.xcconfig"; sourceTree = "<group>"; };
+		324D91CD7ED7DEEDA9F81B7A /* libPods-smail-snapshots.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-smail-snapshots.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD120F6269FBEC6ED53F2042 /* Pods-smail-snapshots.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-smail-snapshots.debug.xcconfig"; path = "Pods/Target Support Files/Pods-smail-snapshots/Pods-smail-snapshots.debug.xcconfig"; sourceTree = "<group>"; };
+		FF431ABA1D966A57005C65E7 /* smail-snapshots.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "smail-snapshots.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF431ABE1D966A57005C65E7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		FF431AC01D966A57005C65E7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		FF431AC11D966A57005C65E7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		FF431AC31D966A57005C65E7 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		FF431AC41D966A57005C65E7 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		FF431AC91D966A58005C65E7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FF431ACC1D966A58005C65E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FF431ACE1D966A58005C65E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FF431AD41D966FC2005C65E7 /* PreviewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreviewViewController.h; sourceTree = "<group>"; };
+		FF431AD51D966FC2005C65E7 /* PreviewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreviewViewController.m; sourceTree = "<group>"; };
+		FF431AD71D9681C9005C65E7 /* APIManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIManager.h; sourceTree = "<group>"; };
+		FF431AD81D9681C9005C65E7 /* APIManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIManager.m; sourceTree = "<group>"; };
+		FF431ADA1D968280005C65E7 /* frame3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = frame3.png; sourceTree = "<group>"; };
+		FF431ADC1D968A53005C65E7 /* WebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebView.h; sourceTree = "<group>"; };
+		FF431ADD1D968A53005C65E7 /* WebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebView.m; sourceTree = "<group>"; };
+		FF431ADF1D96997D005C65E7 /* APIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIClient.h; sourceTree = "<group>"; };
+		FF431AE01D96997D005C65E7 /* APIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIClient.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FF431AB71D966A57005C65E7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				746AD622EFF640F7BBD7F809 /* libPods-smail-snapshots.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6FCCB7375CDDCF24D24320E0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AD120F6269FBEC6ED53F2042 /* Pods-smail-snapshots.debug.xcconfig */,
+				31AD1CF05FC73464A45374C9 /* Pods-smail-snapshots.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		826910EAF33D0D016645FACA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				324D91CD7ED7DEEDA9F81B7A /* libPods-smail-snapshots.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FF431AB11D966A57005C65E7 = {
+			isa = PBXGroup;
+			children = (
+				FF431ABC1D966A57005C65E7 /* smail-snapshots */,
+				FF431ABB1D966A57005C65E7 /* Products */,
+				6FCCB7375CDDCF24D24320E0 /* Pods */,
+				826910EAF33D0D016645FACA /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		FF431ABB1D966A57005C65E7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FF431ABA1D966A57005C65E7 /* smail-snapshots.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FF431ABC1D966A57005C65E7 /* smail-snapshots */ = {
+			isa = PBXGroup;
+			children = (
+				FF431AC01D966A57005C65E7 /* AppDelegate.h */,
+				FF431AC11D966A57005C65E7 /* AppDelegate.m */,
+				FF431AC31D966A57005C65E7 /* ViewController.h */,
+				FF431AC41D966A57005C65E7 /* ViewController.m */,
+				FF431AC91D966A58005C65E7 /* Assets.xcassets */,
+				FF431ACB1D966A58005C65E7 /* LaunchScreen.storyboard */,
+				FF431ACE1D966A58005C65E7 /* Info.plist */,
+				FF431ABD1D966A57005C65E7 /* Supporting Files */,
+				FF431AD41D966FC2005C65E7 /* PreviewViewController.h */,
+				FF431AD51D966FC2005C65E7 /* PreviewViewController.m */,
+				FF431AD71D9681C9005C65E7 /* APIManager.h */,
+				FF431AD81D9681C9005C65E7 /* APIManager.m */,
+				FF431ADA1D968280005C65E7 /* frame3.png */,
+				FF431ADC1D968A53005C65E7 /* WebView.h */,
+				FF431ADD1D968A53005C65E7 /* WebView.m */,
+				FF431ADF1D96997D005C65E7 /* APIClient.h */,
+				FF431AE01D96997D005C65E7 /* APIClient.m */,
+			);
+			path = "smail-snapshots";
+			sourceTree = "<group>";
+		};
+		FF431ABD1D966A57005C65E7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FF431ABE1D966A57005C65E7 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FF431AB91D966A57005C65E7 /* smail-snapshots */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FF431AD11D966A58005C65E7 /* Build configuration list for PBXNativeTarget "smail-snapshots" */;
+			buildPhases = (
+				F9C92DC99E774F44B258BB99 /* [CP] Check Pods Manifest.lock */,
+				FF431AB61D966A57005C65E7 /* Sources */,
+				FF431AB71D966A57005C65E7 /* Frameworks */,
+				FF431AB81D966A57005C65E7 /* Resources */,
+				943D860403AFBB0292A5BF3C /* [CP] Embed Pods Frameworks */,
+				18FCAE61E5BC8D570B93DBE9 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "smail-snapshots";
+			productName = "smail-snapshots";
+			productReference = FF431ABA1D966A57005C65E7 /* smail-snapshots.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FF431AB21D966A57005C65E7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = tomoki;
+				TargetAttributes = {
+					FF431AB91D966A57005C65E7 = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = U7S8RJ4Q38;
+					};
+				};
+			};
+			buildConfigurationList = FF431AB51D966A57005C65E7 /* Build configuration list for PBXProject "smail-snapshots" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FF431AB11D966A57005C65E7;
+			productRefGroup = FF431ABB1D966A57005C65E7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FF431AB91D966A57005C65E7 /* smail-snapshots */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FF431AB81D966A57005C65E7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF431ACD1D966A58005C65E7 /* LaunchScreen.storyboard in Resources */,
+				FF431ADB1D968280005C65E7 /* frame3.png in Resources */,
+				FF431ACA1D966A58005C65E7 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		18FCAE61E5BC8D570B93DBE9 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-smail-snapshots/Pods-smail-snapshots-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		943D860403AFBB0292A5BF3C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-smail-snapshots/Pods-smail-snapshots-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F9C92DC99E774F44B258BB99 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FF431AB61D966A57005C65E7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF431AC51D966A57005C65E7 /* ViewController.m in Sources */,
+				FF431AE11D96997D005C65E7 /* APIClient.m in Sources */,
+				FF431AC21D966A57005C65E7 /* AppDelegate.m in Sources */,
+				FF431ABF1D966A57005C65E7 /* main.m in Sources */,
+				FF431ADE1D968A53005C65E7 /* WebView.m in Sources */,
+				FF431AD61D966FC2005C65E7 /* PreviewViewController.m in Sources */,
+				FF431AD91D9681C9005C65E7 /* APIManager.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		FF431ACB1D966A58005C65E7 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FF431ACC1D966A58005C65E7 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FF431ACF1D966A58005C65E7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		FF431AD01D966A58005C65E7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FF431AD21D966A58005C65E7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AD120F6269FBEC6ED53F2042 /* Pods-smail-snapshots.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = "smail-snapshots/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tomoki.smail-snapshots";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		FF431AD31D966A58005C65E7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 31AD1CF05FC73464A45374C9 /* Pods-smail-snapshots.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = "smail-snapshots/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tomoki.smail-snapshots";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FF431AB51D966A57005C65E7 /* Build configuration list for PBXProject "smail-snapshots" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FF431ACF1D966A58005C65E7 /* Debug */,
+				FF431AD01D966A58005C65E7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FF431AD11D966A58005C65E7 /* Build configuration list for PBXNativeTarget "smail-snapshots" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FF431AD21D966A58005C65E7 /* Debug */,
+				FF431AD31D966A58005C65E7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FF431AB21D966A57005C65E7 /* Project object */;
+}

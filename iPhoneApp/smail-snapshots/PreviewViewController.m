@@ -1,0 +1,67 @@
+//
+//  PreviewViewController.m
+//  smail-snapshots
+//
+//  Created by tomoki on 2016/09/24.
+//  Copyright © 2016年 tomoki. All rights reserved.
+//
+
+#import "PreviewViewController.h"
+#import "APIClient.h"
+
+@interface PreviewViewController ()
+@property (strong, nonatomic) UIButton *cancel;
+@property (strong, nonatomic) UIButton *save;
+@property (strong, nonatomic) UIImageView *imageView;
+@property (strong, nonatomic) UIImage *image;
+@end
+
+@implementation PreviewViewController
+
+- (void)viewDidLoad {
+    self.view.backgroundColor = [UIColor whiteColor];
+    _imageView = [[UIImageView alloc] initWithFrame:self.view.frame];
+    [_imageView setContentMode:UIViewContentModeScaleAspectFit];
+    
+    _cancel = [[UIButton alloc] initWithFrame:CGRectMake(self.view.frame.size.width/5, self.view.frame.size.height - 100, self.view.frame.size.width/5, 20)];
+    _save = [[UIButton alloc] initWithFrame:CGRectMake((self.view.frame.size.width/5) * 3, self.view.frame.size.height - 100, self.view.frame.size.width/5, 20)];
+    _cancel.backgroundColor = [UIColor blackColor];
+    _save.backgroundColor = [UIColor blackColor];
+    
+    [self.view addSubview:_imageView];
+    [self.view addSubview:_cancel];
+    [self.view addSubview:_save];
+    
+    [self.cancel addTarget:self action:@selector(tapCancel:) forControlEvents:UIControlEventTouchUpInside];
+    [self.save addTarget:self action:@selector(tapSave:) forControlEvents:UIControlEventTouchUpInside];
+    if (self.image) {
+        [self setImageWithImage:_image];
+    }
+}
+
+- (void)setPreviewImage:(UIImage *)image {
+    _image = [[UIImage alloc] initWithCGImage:image.CGImage];
+    [self setImageWithImage:_image];
+}
+
+- (void)tapCancel:(UIButton *)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)tapSave:(UIButton *)sender {
+    [APIClient requestRegist:_image success:^{
+        [self dismissViewControllerAnimated:YES completion:nil];
+        [self.delegate dissmissPicturePreviewView];
+    } failure:^(NSError *error) {
+        NSLog(@"error:%@",error);
+        [self dismissViewControllerAnimated:YES completion:nil];
+        [self.delegate dissmissPicturePreviewView];
+    }];
+}
+
+- (void)setImageWithImage:(UIImage *)image {
+    self.imageView.image = _image;
+}
+
+
+@end
