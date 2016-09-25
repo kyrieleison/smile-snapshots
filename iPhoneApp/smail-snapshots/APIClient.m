@@ -11,14 +11,14 @@
 
 @implementation APIClient
 
-+ (void)requestRegist:(UIImage *)requestImage success:(void (^)())success failure:(void (^)(NSError *error))failure {
++ (void)requestRegist:(UIImage *)requestImage shopId:(NSString *)shopId success:(void (^)())success failure:(void (^)(NSError *error))failure {
     NSString *url = @"http://192.168.1.178:3000/image";
     
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     
     NSData* jpgData = [[NSData alloc] initWithData:UIImageJPEGRepresentation(requestImage, 1.0f)];
     NSString* imageData = [jpgData base64EncodedStringWithOptions:NSDataBase64Encoding76CharacterLineLength];
-    NSDictionary *requestData = @{@"image":imageData};
+    NSDictionary *requestData = @{@"image":imageData,@"shop_id":shopId};
     [manager POST:url parameters:requestData success:^(NSURLSessionDataTask * _Nonnull task, id  _Nonnull responseObject) {
             success(responseObject);
             return;

@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "ViewController.h"
 #import "WebView.h"
+#import "ReadQrcodeViewController.h"
 
 @interface AppDelegate ()
 
@@ -26,7 +27,7 @@
     // 最初に表示されるViewControllerを生成
     _tabBarController = [[UITabBarController alloc] init];
     [_tabBarController.tabBar.items objectAtIndex:1].title = @"Web";
-    ViewController *fvc = [[ViewController alloc] init];
+    ReadQrcodeViewController *fvc = [[ReadQrcodeViewController alloc] init];
     // １つめのタブのタイトルを"hoge"に設定する
     fvc.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"" image:[UIImage imageNamed:@"Screenshot-50"] selectedImage:[UIImage imageNamed:@"Screenshot Filled-50"]];
     WebView *webView = [[WebView alloc] init];

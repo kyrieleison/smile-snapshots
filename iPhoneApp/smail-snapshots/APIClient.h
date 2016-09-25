@@ -11,6 +11,6 @@
 
 @interface APIClient : NSObject
 
-+ (void)requestRegist:(UIImage *)request success:(void (^)())success failure:(void (^)(NSError *error))failure;
++ (void)requestRegist:(UIImage *)request shopId:(NSString *)shopId  success:(void (^)())success failure:(void (^)(NSError *error))failure;
 
 @end

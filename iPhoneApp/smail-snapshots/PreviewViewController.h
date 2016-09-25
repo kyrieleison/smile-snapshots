@@ -16,6 +16,7 @@
 
 @interface PreviewViewController : UIViewController
 
+- (instancetype)initWithShopId:(NSString *)shopId;
 - (void)setPreviewImage:(UIImage *)image;
 @property (weak,nonatomic) id<PicturePreviewViewDelegate> delegate;
 
